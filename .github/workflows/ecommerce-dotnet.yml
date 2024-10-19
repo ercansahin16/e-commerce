@@ -12,12 +12,12 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 7.0.x # Projede kullandığınız .NET Core sürümünü buraya ekleyin
+        dotnet-version: 7.0.x 
 
     - name: Restore dependencies
       run: dotnet restore
@@ -33,7 +33,7 @@ jobs:
       run: dotnet publish -c Release -o ./publish
 
     - name: Upload build artifacts (optional)
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: e-commerce-build
         path: ./publish
